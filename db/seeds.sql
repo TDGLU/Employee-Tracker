@@ -1,30 +1,31 @@
-DROP DATABASE IF EXISTS employee_db;
-CREATE DATABASE employee_db;
+INSERT INTO departments (dep_name)
+VALUES 
+("Engineering"),
+("Finance"),
+("Legal"),
+("Sales"),
+("Service");
 
-USE employee_db;
+INSERT INTO roles (title, salary, department_id)
+VALUES
+("Sales Lead", 65000.00, 2),
+("Salesperson", 30000.00, 2),
+("Lead Engineer", 95000.00, 3),
+("Software Engineer", 85000.00, 3),
+("Account Manager", 70000.00, 1),
+("Accountant", 68000.00, 3),
+("Legal Team Lead", 100000.00, 1),
+("Lawyer", 100000.00, 2),
+("Customer Service", 60000.00, 3);
 
-CREATE TABLE departments (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  dep_name VARCHAR(30)
-);
-
-CREATE TABLE roles (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  title VARCHAR(30),
-  salary DECIMAL,
-  department_id INT,
-  FOREIGN KEY (department_id)
-  REFERENCES departments(id)
-);
-
-CREATE TABLE employees (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  first_name VARCHAR(30),
-  last_name VARCHAR(30),
-  role_id INT,
-  manager_id INT,
-  FOREIGN KEY (role_id)
-  REFERENCES roles(id),
-  FOREIGN KEY (manager_id)
-  REFERENCES employees(id)
-);
+INSERT INTO employees (first_name, last_name, role_id, manager_id)
+VALUES
+("Luke", "McIlvenny", 1),
+("Christian", "McIlvenny", 1),
+("Walter", "White" 1),
+("Jesse", "Pinkman" 1),
+("Gustavo", "Fring" 1),
+("Charles", "McGill" 1),
+("Saul", "Goodman" 1),
+("Josh", "Franklin" 1),
+("Joe", "Hernandez" 1);
