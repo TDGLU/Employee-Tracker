@@ -41,3 +41,29 @@ const addRole = [
     name: "newRoleDep"
   }
 ]
+
+// add employee questions 
+const addEmp = [
+  {
+    type: "input",
+    message: "What is the employee's first name?",
+    name: "empFirstName"
+  },
+  {
+    type: "input",
+    message: "What is the employee's last name?",
+    name: "empLastName"
+  },
+  {
+    type: "list",
+    message: "What is the employee's role?",
+    choices: ["Sales Lead", "Salesperson", "Lead Engineer", "Software Engineer", "Account Manager", "Accountant", "Legal Team Lead", "Lawyer", "Customer Service"],
+    name: "empRole"
+  },
+  {
+    type: "list",
+    message: "Who is the employee's Manager?",
+    choices: ["Luke", "Nate", "Tom", "None"],
+    name: "empManager"
+  }
+]
